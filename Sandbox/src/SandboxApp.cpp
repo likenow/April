@@ -3,13 +3,13 @@
 class Sandbox : public April::Application
 {
 public:
-	Sandbox()
-	{}
-	~Sandbox()
-	{}
+    Sandbox()
+    {}
+    ~Sandbox()
+    {}
 };
 
 April::Application* April::CreateApplication()
 {
-	return new Sandbox();
+    return new Sandbox();
 }
