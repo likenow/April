@@ -1,9 +1,8 @@
 #pragma once
 
-#include "April/Core.h"
+#include "alpch.h"
 
-#include <string>
-#include <functional>
+#include "April/Core.h"
 
 namespace April {
 	enum class EventType

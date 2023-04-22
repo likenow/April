@@ -1,8 +1,6 @@
 #pragma once
 #include "Event.h"
 
-#include <sstream>
-
 namespace April {
 
 	class APRIL_API MouseMovedEvent : public Event

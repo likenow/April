@@ -5,7 +5,7 @@
       <UniqueIdentifier>{3D96D60C-A9AA-FEBD-722C-A21DDEFFFAEE}</UniqueIdentifier>
     </Filter>
     <Filter Include="April\Events">
-      <UniqueIdentifier>{d47a692c-d57e-4cff-aa76-5a184932069a}</UniqueIdentifier>
+      <UniqueIdentifier>{813BF729-6D9E-86CE-1624-BF8402665251}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -17,9 +17,6 @@
       <Filter>April</Filter>
     </ClInclude>
     <ClInclude Include="src\April\EntryPoint.h">
-      <Filter>April</Filter>
-    </ClInclude>
-    <ClInclude Include="src\April\Log.h">
       <Filter>April</Filter>
     </ClInclude>
     <ClInclude Include="src\April\Events\ApplicationEvent.h">
@@ -34,6 +31,10 @@
     <ClInclude Include="src\April\Events\MouseEvent.h">
       <Filter>April\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\April\Log.h">
+      <Filter>April</Filter>
+    </ClInclude>
+    <ClInclude Include="src\alpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\April\Application.cpp">
@@ -42,5 +43,6 @@
     <ClCompile Include="src\April\Log.cpp">
       <Filter>April</Filter>
     </ClCompile>
+    <ClCompile Include="src\alpch.cpp" />
   </ItemGroup>
 </Project>
