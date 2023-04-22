@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "April/Log.h"
+
 #ifdef AL_PLATFORM_WINDOWS
     #include <Windows.h>
 #endif
