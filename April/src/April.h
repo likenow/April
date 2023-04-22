@@ -3,6 +3,7 @@
 // For use by April Applications
 
 #include "April/Application.h"
+#include "April/Log.h"
 
 
 // Entry point
