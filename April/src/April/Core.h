@@ -9,3 +9,5 @@
 #else
 	#error April only supports windows!
 #endif // AL_PLATFORM_WINDOWS
+
+#define BIT(x) (1 << x)

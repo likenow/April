@@ -4,6 +4,9 @@
     <Filter Include="April">
       <UniqueIdentifier>{3D96D60C-A9AA-FEBD-722C-A21DDEFFFAEE}</UniqueIdentifier>
     </Filter>
+    <Filter Include="April\Events">
+      <UniqueIdentifier>{d47a692c-d57e-4cff-aa76-5a184932069a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\April.h" />
@@ -18,6 +21,18 @@
     </ClInclude>
     <ClInclude Include="src\April\Log.h">
       <Filter>April</Filter>
+    </ClInclude>
+    <ClInclude Include="src\April\Events\ApplicationEvent.h">
+      <Filter>April\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\April\Events\Event.h">
+      <Filter>April\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\April\Events\KeyEvent.h">
+      <Filter>April\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\April\Events\MouseEvent.h">
+      <Filter>April\Events</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
