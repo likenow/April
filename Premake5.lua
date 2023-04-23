@@ -64,14 +64,17 @@ project "April"
 
 	filter "configurations:Debug"
 		defines "AL_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "AL_RELEASE"
+		buildoptions "/MDd"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "AL_Dist"
+		buildoptions "/MDd"
 		optimize "On"
 
 
@@ -112,12 +115,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "AL_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "AL_RELEASE"
+		buildoptions "/MDd"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "AL_Dist"
+		buildoptions "/MDd"
 		optimize "On"

@@ -4,6 +4,8 @@
 #include "Events/ApplicationEvent.h"
 #include "Window.h"
 
+#include "April/LayerStack.h"
+
 namespace April {
     class APRIL_API Application
     {
@@ -13,11 +15,14 @@ namespace April {
 
         void OnEvent(Event& e);
         void Run();
+        void PushLayer(Layer* layer);
+        void PushOverlay(Layer* layer);
     private:
         bool OnWindowClose(WindowCloseEvent& e);
 
         std::unique_ptr<Window> m_Window;
         bool m_Running = true;
+        LayerStack m_LayerStack;
     };
 
     // To be defined in Client

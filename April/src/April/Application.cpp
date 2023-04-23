@@ -1,5 +1,6 @@
 #include "alpch.h"
 #include "Application.h"
+#include "April/Layer.h"
 
 #include <GLFW/glfw3.h>
 
@@ -26,6 +27,13 @@ namespace April {
         EventDispatcher dispatcher(e);
 
         dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+
+        for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
+        {
+            (*--it)->OnEvent(e);
+            if (e.Handled)
+                break;
+        }
     }
 
     void Application::Run()
@@ -36,8 +44,22 @@ namespace April {
             AL_TRACE(e);
             glClearColor(1, 0, 1, 1);
             glClear(GL_COLOR_BUFFER_BIT);
+            for each (Layer* layer in m_LayerStack)
+            {
+                layer->OnUpdate();
+            }
             m_Window->OnUpdate();
         }
         while (true);
+    }
+
+    void Application::PushLayer(Layer* layer)
+    {
+        m_LayerStack.PushLayer(layer);
+    }
+
+    void Application::PushOverlay(Layer* layer)
+    {
+        m_LayerStack.PushOverlay(layer);
     }
 }

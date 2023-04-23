@@ -4,6 +4,7 @@
 
 #include "April/Application.h"
 #include "April/Log.h"
+#include "April/Layer.h"
 
 
 // Entry point

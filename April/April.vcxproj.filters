@@ -37,6 +37,12 @@
     <ClInclude Include="src\April\Events\MouseEvent.h">
       <Filter>April\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\April\Layer.h">
+      <Filter>April</Filter>
+    </ClInclude>
+    <ClInclude Include="src\April\LayerStack.h">
+      <Filter>April</Filter>
+    </ClInclude>
     <ClInclude Include="src\April\Log.h">
       <Filter>April</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\April\Application.cpp">
+      <Filter>April</Filter>
+    </ClCompile>
+    <ClCompile Include="src\April\Layer.cpp">
+      <Filter>April</Filter>
+    </ClCompile>
+    <ClCompile Include="src\April\LayerStack.cpp">
       <Filter>April</Filter>
     </ClCompile>
     <ClCompile Include="src\April\Log.cpp">
