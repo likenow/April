@@ -1,5 +1,6 @@
 workspace "April"
     architecture "x64"
+    startproject "Sandbox"
 
     configurations
     {
@@ -16,14 +17,18 @@ IncludeDir["GLFW"] = "April/vendor/GLFW/include"
 IncludeDir["Glad"] = "April/vendor/Glad/include"
 IncludeDir["ImGui"] = "April/vendor/imgui"
 
-include "April/vendor/GLFW"
-include "April/vendor/Glad"
-include "April/vendor/imgui"
+group "Dependencies"
+    include "April/vendor/GLFW"
+    include "April/vendor/Glad"
+    include "April/vendor/imgui"
+
+group ""
 
 project "April"
     location "April"
     kind "SharedLib"
     language "C++"
+    staticruntime "off"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -56,7 +61,6 @@ project "April"
 
     filter "system:windows"
         cppdialect "C++17"
-        staticruntime "on"
         systemversion "latest"
         
         defines
@@ -68,22 +72,22 @@ project "April"
 
         postbuildcommands
         {
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+            ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
         }
 
     filter "configurations:Debug"
         defines "AL_DEBUG"
-        buildoptions "/MDd"
+        runtime "Debug"
         symbols "on"
 
     filter "configurations:Release"
         defines "AL_RELEASE"
-        buildoptions "/MDd"
+        runtime "Release"
         optimize "on"
 
     filter "configurations:Dist"
         defines "AL_Dist"
-        buildoptions "/MDd"
+        runtime "Release"
         optimize "on"
 
 
@@ -91,6 +95,7 @@ project "Sandbox"
     location "Sandbox"
     kind "ConsoleApp"
     language "C++"
+    staticruntime "off"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -114,7 +119,6 @@ project "Sandbox"
 
     filter "system:windows"
         cppdialect "C++17"
-        staticruntime "on"
         systemversion "latest"
         
         defines
@@ -124,15 +128,15 @@ project "Sandbox"
 
     filter "configurations:Debug"
         defines "AL_DEBUG"
-        buildoptions "/MDd"
+        runtime "Debug"
         symbols "on"
 
     filter "configurations:Release"
         defines "AL_RELEASE"
-        buildoptions "/MDd"
+        runtime "Release"
         optimize "on"
 
     filter "configurations:Dist"
         defines "AL_Dist"
-        buildoptions "/MDd"
+        runtime "Release"
         optimize "on"
