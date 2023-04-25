@@ -162,9 +162,11 @@
     <ClInclude Include="src\April\Events\MouseEvent.h" />
     <ClInclude Include="src\April\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\April\Input.h" />
+    <ClInclude Include="src\April\KeyCodes.h" />
     <ClInclude Include="src\April\Layer.h" />
     <ClInclude Include="src\April\LayerStack.h" />
     <ClInclude Include="src\April\Log.h" />
+    <ClInclude Include="src\April\MouseButtonCodes.h" />
     <ClInclude Include="src\April\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />

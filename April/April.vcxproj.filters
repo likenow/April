@@ -67,6 +67,8 @@
     <ClInclude Include="src\alpch.h" />
     <ClInclude Include="src\April\Input.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\April\KeyCodes.h" />
+    <ClInclude Include="src\April\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\April\Application.cpp">
