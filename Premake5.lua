@@ -16,6 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "April/vendor/GLFW/include"
 IncludeDir["Glad"] = "April/vendor/Glad/include"
 IncludeDir["ImGui"] = "April/vendor/imgui"
+IncludeDir["glm"] = "April/vendor/glm"
 
 group "Dependencies"
     include "April/vendor/GLFW"
@@ -39,7 +40,9 @@ project "April"
     files
     {
         "%{prj.name}/src/**.h",
-        "%{prj.name}/src/**.cpp"
+        "%{prj.name}/src/**.cpp",
+        "%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
     }
 
     includedirs
@@ -48,7 +51,8 @@ project "April"
         "%{prj.name}/vendor/spdlog/include",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
-        "%{IncludeDir.ImGui}"
+        "%{IncludeDir.ImGui}",
+        "%{IncludeDir.glm}"
     }
 
     links 
