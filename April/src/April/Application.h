@@ -5,6 +5,7 @@
 #include "Window.h"
 
 #include "April/LayerStack.h"
+#include "April/ImGui/ImGuiLayer.h"
 
 namespace April {
     class APRIL_API Application
@@ -25,6 +26,7 @@ namespace April {
         bool OnWindowClose(WindowCloseEvent& e);
 
         std::unique_ptr<Window> m_Window;
+        ImGuiLayer* m_ImGuiLayer;
         bool m_Running = true;
         LayerStack m_LayerStack;
     private:

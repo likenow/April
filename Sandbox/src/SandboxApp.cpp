@@ -1,5 +1,7 @@
 #include <April.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public April::Layer
 {
 public:
@@ -13,6 +15,15 @@ public:
         AL_INFO("ExampleLayer::Update");
         if (April::Input::IsKeyPressed(AL_KEY_TAB))
             AL_TRACE("Tab key is pressed (poll)!");
+    }
+
+    virtual void OnImGuiRender() override
+    {
+        /*
+        ImGui::Begin("Test");
+        ImGui::Text("Hello World!");
+        ImGui::End();
+        */
     }
 
     void OnEvent(April::Event& event) override
@@ -34,7 +45,6 @@ public:
     Sandbox()
     {
         PushLayer(new ExampleLayer());
-        PushOverlay(new April::ImGuiLayer());
     }
     ~Sandbox()
     {}

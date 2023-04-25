@@ -113,7 +113,8 @@ project "Sandbox"
     includedirs
     {
         "April/vendor/spdlog/include",
-        "April/src"
+        "April/src",
+        "April/vendor"
     }
 
     links
