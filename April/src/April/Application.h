@@ -6,13 +6,14 @@
 
 #include "April/LayerStack.h"
 #include "April/ImGui/ImGuiLayer.h"
+#include "April/Renderer/Shader.h"
 
 namespace April {
     class APRIL_API Application
     {
     public:
         Application();
-        virtual ~Application();
+        virtual ~Application() = default;
 
         void OnEvent(Event& e);
         void Run();
@@ -29,6 +30,8 @@ namespace April {
         ImGuiLayer* m_ImGuiLayer;
         bool m_Running = true;
         LayerStack m_LayerStack;
+        unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+        std::unique_ptr<Shader> m_Shader;
     private:
         static Application* s_Instance;
     };

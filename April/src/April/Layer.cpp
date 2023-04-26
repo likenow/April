@@ -8,9 +8,4 @@ namespace April {
     {
     }
 
-    Layer::~Layer()
-    {
-
-    }
-
 }

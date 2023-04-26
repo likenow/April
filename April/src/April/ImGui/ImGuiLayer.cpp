@@ -18,10 +18,6 @@ namespace April {
     {
     }
 
-    ImGuiLayer::~ImGuiLayer()
-    {
-    }
-
     void ImGuiLayer::OnAttach()
     {
         IMGUI_CHECKVERSION();
