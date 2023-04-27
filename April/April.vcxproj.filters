@@ -1351,6 +1351,9 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\April\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\April\Renderer\Shader.h" />
+    <ClInclude Include="src\April\Renderer\Buffer.h" />
+    <ClInclude Include="src\April\Renderer\Renderer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\April\Application.cpp">
@@ -1382,5 +1385,8 @@
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\April\Renderer\Shader.cpp" />
+    <ClCompile Include="src\April\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\April\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
   </ItemGroup>
 </Project>
