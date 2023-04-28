@@ -8,6 +8,7 @@
 #include "April/ImGui/ImGuiLayer.h"
 #include "April/Renderer/Shader.h"
 #include "April/Renderer/Buffer.h"
+#include "April/Renderer/VertexArray.h"
 
 namespace April {
     class APRIL_API Application
@@ -31,10 +32,11 @@ namespace April {
         ImGuiLayer* m_ImGuiLayer;
         bool m_Running = true;
         LayerStack m_LayerStack;
-        unsigned int m_VertexArray;
-        std::unique_ptr<VertexBuffer> m_VertexBuffer;
-        std::unique_ptr<IndexBuffer> m_IndexBuffer;
-        std::unique_ptr<Shader> m_Shader;
+
+        std::shared_ptr<Shader> m_Shader;
+        std::shared_ptr<VertexArray> m_VertexArray;
+        std::shared_ptr<Shader> m_BlueShader;
+		std::shared_ptr<VertexArray> m_SquareVA;
     private:
         static Application* s_Instance;
     };
