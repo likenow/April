@@ -116,7 +116,8 @@ project "Sandbox"
     {
         "April/vendor/spdlog/include",
         "April/src",
-        "April/vendor"
+        "April/vendor",
+		"%{IncludeDir.glm}"
     }
 
     links

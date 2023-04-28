@@ -1,5 +1,6 @@
 #pragma once
 
+#include "glm/glm.hpp"
 #include <string>
 
 namespace April {
@@ -11,6 +12,8 @@ namespace April {
 
         void Bind() const;
         void Unbind() const;
+
+        void UploadUniformMat4(const std::string& name, const glm::mat4& matrix);
     private:
         uint32_t m_RendererID;
     };
