@@ -17,6 +17,7 @@
 #include "April/Renderer/Shader.h"
 #include "April/Renderer/VertexArray.h"
 #include "April/Renderer/OrthographicCamera.h"
+#include "April/Renderer/Texture.h"
 
 #include "April/Input.h"
 #include "April/KeyCodes.h"

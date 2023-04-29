@@ -7,6 +7,9 @@
     <Filter Include="src\April">
       <UniqueIdentifier>{94A493B2-000F-4829-494D-F9CEB5F6257E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\April\Core">
+      <UniqueIdentifier>{6CC52E31-5893-2237-4127-935D2D94FE9B}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\April\Events">
       <UniqueIdentifier>{F8E1173D-E4DA-368F-0D0D-1C14F964169B}</UniqueIdentifier>
     </Filter>
@@ -46,6 +49,9 @@
     <Filter Include="vendor\glm\glm\gtx">
       <UniqueIdentifier>{B3A6A76B-9F8A-68C1-08EB-6214F4ED5243}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendor\stb_image">
+      <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\April.h">
@@ -56,6 +62,9 @@
     </ClInclude>
     <ClInclude Include="src\April\Core.h">
       <Filter>src\April</Filter>
+    </ClInclude>
+    <ClInclude Include="src\April\Core\TimeStep.h">
+      <Filter>src\April\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\April\EntryPoint.h">
       <Filter>src\April</Filter>
@@ -114,6 +123,9 @@
     <ClInclude Include="src\April\Renderer\Shader.h">
       <Filter>src\April\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\April\Renderer\Texture.h">
+      <Filter>src\April\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\April\Renderer\VertexArray.h">
       <Filter>src\April\Renderer</Filter>
     </ClInclude>
@@ -127,6 +139,12 @@
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
@@ -1389,6 +1407,9 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\stb_image\stb_image.h">
+      <Filter>vendor\stb_image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\April\Application.cpp">
@@ -1427,6 +1448,9 @@
     <ClCompile Include="src\April\Renderer\Shader.cpp">
       <Filter>src\April\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\April\Renderer\Texture.cpp">
+      <Filter>src\April\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\April\Renderer\VertexArray.cpp">
       <Filter>src\April\Renderer</Filter>
     </ClCompile>
@@ -1437,6 +1461,12 @@
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
@@ -1450,6 +1480,9 @@
     </ClCompile>
     <ClCompile Include="src\alpch.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <Filter>vendor\stb_image</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

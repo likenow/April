@@ -17,6 +17,7 @@ IncludeDir["GLFW"] = "April/vendor/GLFW/include"
 IncludeDir["Glad"] = "April/vendor/Glad/include"
 IncludeDir["ImGui"] = "April/vendor/imgui"
 IncludeDir["glm"] = "April/vendor/glm"
+IncludeDir["stb_image"] = "April/vendor/stb_image"
 
 group "Dependencies"
     include "April/vendor/GLFW"
@@ -42,6 +43,8 @@ project "April"
     {
         "%{prj.name}/src/**.h",
         "%{prj.name}/src/**.cpp",
+        "%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
         "%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
     }
@@ -58,7 +61,8 @@ project "April"
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
         "%{IncludeDir.ImGui}",
-        "%{IncludeDir.glm}"
+        "%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
     }
 
     links 
