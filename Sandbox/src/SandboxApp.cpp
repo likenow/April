@@ -88,7 +88,7 @@ public:
             }
         )";
 
-        m_Shader.reset(April::Shader::Create(vertexSrc, fragmentSrc));
+        m_Shader = April::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
         std::string flatColorShaderVertexSrc = R"(
             #version 330 core
             
@@ -115,42 +115,15 @@ public:
             }
         )";
 
-        m_FlatColorShader.reset(April::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+        m_FlatColorShader = April::Shader::Create("FlatColor", flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
 
-        std::string textureShaderVertexSrc = R"(
-            #version 330 core
-            
-            layout(location = 0) in vec3 a_Position;
-            layout(location = 1) in vec2 a_TexCoord;
-            uniform mat4 u_ViewProjection;
-            uniform mat4 u_Transform;
-            out vec2 v_TexCoord;
-            void main()
-            {
-                v_TexCoord = a_TexCoord;
-                gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);	
-            }
-        )";
-
-        std::string textureShaderFragmentSrc = R"(
-            #version 330 core
-            
-            layout(location = 0) out vec4 color;
-            in vec2 v_TexCoord;
-            
-            uniform sampler2D u_Texture;
-            void main()
-            {
-                color = texture(u_Texture, v_TexCoord);
-            }
-        )";
-
-        m_TextureShader.reset(April::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
+        auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 
         m_Texture = April::Texture2D::Create("assets/textures/Checkerboard.png");
+        m_ChernoLogoTexture = April::Texture2D::Create("assets/textures/ChernoLogo.png");
 
-        std::dynamic_pointer_cast<April::OpenGLShader>(m_TextureShader)->Bind();
-        std::dynamic_pointer_cast<April::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+        std::dynamic_pointer_cast<April::OpenGLShader>(textureShader)->Bind();
+        std::dynamic_pointer_cast<April::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
     }
 
     void OnUpdate(April::Timestep ts) override
@@ -205,9 +178,13 @@ public:
             }
         }
 
-        m_Texture->Bind();
-        April::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+        auto textureShader = m_ShaderLibrary.Get("Texture");
 
+        m_Texture->Bind();
+        April::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+
+        m_ChernoLogoTexture->Bind();
+        April::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
         //April::Renderer::Submit(m_Shader, m_VertexArray);
 
         April::Renderer::EndScene();
@@ -249,11 +226,12 @@ public:
     }
     */
 private:
+    April::ShaderLibrary m_ShaderLibrary;
     std::shared_ptr<April::Shader> m_Shader;
     std::shared_ptr<April::VertexArray> m_VertexArray;
-    std::shared_ptr<April::Shader> m_FlatColorShader, m_TextureShader;
+    std::shared_ptr<April::Shader> m_FlatColorShader;
     std::shared_ptr<April::VertexArray> m_SquareVA;
-    April::Ref<April::Texture2D> m_Texture;
+    April::Ref<April::Texture2D> m_Texture, m_ChernoLogoTexture;
 
     April::OrthographicCamera m_Camera;
     glm::vec3 m_CameraPosition;
