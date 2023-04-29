@@ -6,10 +6,6 @@
 
 #include "April/LayerStack.h"
 #include "April/ImGui/ImGuiLayer.h"
-#include "April/Renderer/Shader.h"
-#include "April/Renderer/Buffer.h"
-#include "April/Renderer/VertexArray.h"
-#include "April/Renderer/OrthographicCamera.h"
 
 namespace April {
     class APRIL_API Application
@@ -34,12 +30,9 @@ namespace April {
         bool m_Running = true;
         LayerStack m_LayerStack;
 
-        std::shared_ptr<Shader> m_Shader;
-        std::shared_ptr<VertexArray> m_VertexArray;
-        std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
+        float m_LastFrameTime = 0.0f;
 
-        OrthographicCamera m_Camera;
+        
     private:
         static Application* s_Instance;
     };

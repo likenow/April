@@ -146,6 +146,7 @@
     <ClInclude Include="src\April.h" />
     <ClInclude Include="src\April\Application.h" />
     <ClInclude Include="src\April\Core.h" />
+    <ClInclude Include="src\April\Core\TimeStep.h" />
     <ClInclude Include="src\April\EntryPoint.h" />
     <ClInclude Include="src\April\Events\ApplicationEvent.h" />
     <ClInclude Include="src\April\Events\Event.h" />

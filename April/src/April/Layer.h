@@ -1,5 +1,6 @@
 #pragma once
 #include "April/Core.h"
+#include "April/Core/TimeStep.h"
 #include "April/Events/Event.h"
 
 namespace April {
@@ -12,7 +13,7 @@ namespace April {
 
         virtual void OnAttach() {}
         virtual void OnDetach() {}
-        virtual void OnUpdate() {}
+        virtual void OnUpdate(Timestep ts) {}
         virtual void OnImGuiRender() {}
         virtual void OnEvent(Event& event) {}
 
