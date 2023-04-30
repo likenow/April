@@ -148,32 +148,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\April.h" />
-    <ClInclude Include="src\April\Application.h" />
-    <ClInclude Include="src\April\Core.h" />
+    <ClInclude Include="src\April\Core\Application.h" />
+    <ClInclude Include="src\April\Core\Core.h" />
+    <ClInclude Include="src\April\Core\EntryPoint.h" />
+    <ClInclude Include="src\April\Core\Input.h" />
+    <ClInclude Include="src\April\Core\KeyCodes.h" />
+    <ClInclude Include="src\April\Core\Layer.h" />
+    <ClInclude Include="src\April\Core\LayerStack.h" />
+    <ClInclude Include="src\April\Core\Log.h" />
+    <ClInclude Include="src\April\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\April\Core\TimeStep.h" />
-    <ClInclude Include="src\April\EntryPoint.h" />
+    <ClInclude Include="src\April\Core\Window.h" />
     <ClInclude Include="src\April\Events\ApplicationEvent.h" />
     <ClInclude Include="src\April\Events\Event.h" />
     <ClInclude Include="src\April\Events\KeyEvent.h" />
     <ClInclude Include="src\April\Events\MouseEvent.h" />
     <ClInclude Include="src\April\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\April\Input.h" />
-    <ClInclude Include="src\April\KeyCodes.h" />
-    <ClInclude Include="src\April\Layer.h" />
-    <ClInclude Include="src\April\LayerStack.h" />
-    <ClInclude Include="src\April\Log.h" />
-    <ClInclude Include="src\April\MouseButtonCodes.h" />
-    <ClInclude Include="src\April\OrthographicCameraController.h" />
     <ClInclude Include="src\April\Renderer\Buffer.h" />
     <ClInclude Include="src\April\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\April\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\April\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\April\Renderer\RenderCommand.h" />
     <ClInclude Include="src\April\Renderer\Renderer.h" />
     <ClInclude Include="src\April\Renderer\RendererAPI.h" />
     <ClInclude Include="src\April\Renderer\Shader.h" />
     <ClInclude Include="src\April\Renderer\Texture.h" />
     <ClInclude Include="src\April\Renderer\VertexArray.h" />
-    <ClInclude Include="src\April\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
@@ -602,15 +602,15 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\April\Application.cpp" />
+    <ClCompile Include="src\April\Core\Application.cpp" />
+    <ClCompile Include="src\April\Core\Layer.cpp" />
+    <ClCompile Include="src\April\Core\LayerStack.cpp" />
+    <ClCompile Include="src\April\Core\Log.cpp" />
     <ClCompile Include="src\April\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\April\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\April\Layer.cpp" />
-    <ClCompile Include="src\April\LayerStack.cpp" />
-    <ClCompile Include="src\April\Log.cpp" />
-    <ClCompile Include="src\April\OrthographicCameraController.cpp" />
     <ClCompile Include="src\April\Renderer\Buffer.cpp" />
     <ClCompile Include="src\April\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="src\April\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\April\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\April\Renderer\Renderer.cpp" />
     <ClCompile Include="src\April\Renderer\RendererAPI.cpp" />

@@ -1,7 +1,7 @@
 #pragma once
 #include "alpch.h"
 
-#include "April/Core.h"
+#include "April/Core/Core.h"
 #include "April/Events/Event.h"
 
 namespace April {

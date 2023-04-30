@@ -1,7 +1,7 @@
 #include "alpch.h"
 #include "WindowsInput.h"
 
-#include "April/Application.h"
+#include "April/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 namespace April {

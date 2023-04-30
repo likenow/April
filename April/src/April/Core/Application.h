@@ -1,10 +1,10 @@
 #pragma once
-#include "Core.h"
-#include "Events/Event.h"
-#include "Events/ApplicationEvent.h"
-#include "Window.h"
+#include "April/Core/Core.h"
+#include "April/Events/Event.h"
+#include "April/Events/ApplicationEvent.h"
+#include "April/Core/Window.h"
 
-#include "April/LayerStack.h"
+#include "April/Core/LayerStack.h"
 #include "April/ImGui/ImGuiLayer.h"
 
 namespace April {

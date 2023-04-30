@@ -1,5 +1,5 @@
 #pragma once
-#include "April/Input.h"
+#include "April/Core/Input.h"
 
 namespace April {
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "April/Window.h"
+#include "April/Core/Window.h"
 #include "April/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

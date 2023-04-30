@@ -1,8 +1,8 @@
 #include "alpch.h"
 #include "OrthographicCameraController.h"
 
-#include "April/Input.h"
-#include "April/KeyCodes.h"
+#include "April/Core/Input.h"
+#include "April/Core/KeyCodes.h"
 
 namespace April {
 
