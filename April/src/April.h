@@ -18,12 +18,10 @@
 #include "April/Renderer/VertexArray.h"
 #include "April/Renderer/OrthographicCamera.h"
 #include "April/Renderer/Texture.h"
+#include "April/Renderer/Renderer2D.h"
 
 #include "April/Core/Input.h"
 #include "April/Core/KeyCodes.h"
 #include "April/Core/MouseButtonCodes.h"
 
 #include "April/Renderer/OrthographicCameraController.h"
-
-// Entry point
-#include "April/Core/EntryPoint.h"

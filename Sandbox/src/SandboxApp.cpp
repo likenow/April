@@ -6,13 +6,18 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+// Entry point
+#include <April/Core/EntryPoint.h>
+
+#include "Sandbox2D.h"
+
 class ExampleLayer : public April::Layer
 {
 public:
     ExampleLayer()
         : Layer("Example"), m_CameraController(1280.0f / 720.0f, true)
     {
-        m_VertexArray.reset(April::VertexArray::Create());
+        m_VertexArray = April::VertexArray::Create();
 
         float vertices[3 * 7] = {
             -0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
@@ -21,7 +26,7 @@ public:
         };
          
         std::shared_ptr<April::VertexBuffer> vertexBuffer;
-        vertexBuffer.reset(April::VertexBuffer::Create(vertices, sizeof(vertices)));
+        vertexBuffer = April::VertexBuffer::Create(vertices, sizeof(vertices));
         April::BufferLayout layout = {
             { April::ShaderDataType::Float3, "a_Position" },
             { April::ShaderDataType::Float4, "a_Color" }
@@ -32,9 +37,9 @@ public:
 
         uint32_t indices[3] = { 0, 1, 2 };
         std::shared_ptr<April::IndexBuffer> indexBuffer;
-        indexBuffer.reset(April::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+        indexBuffer = April::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
         m_VertexArray->SetIndexBuffer(indexBuffer);
-        m_SquareVA.reset(April::VertexArray::Create());
+        m_SquareVA = April::VertexArray::Create();
 
         float squareVertices[5 * 4] = {
             -0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
@@ -44,7 +49,7 @@ public:
         };
 
         std::shared_ptr<April::VertexBuffer> squareVB;
-        squareVB.reset(April::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+        squareVB = April::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
         squareVB->SetLayout({
             { April::ShaderDataType::Float3, "a_Position" },
             { April::ShaderDataType::Float2, "a_TexCoord" }
@@ -53,7 +58,7 @@ public:
 
         uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
         std::shared_ptr<April::IndexBuffer> squareIB;
-        squareIB.reset(April::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+        squareIB = April::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
         m_SquareVA->SetIndexBuffer(squareIB);
 
         std::string vertexSrc = R"(
@@ -222,7 +227,8 @@ class Sandbox : public April::Application
 public:
     Sandbox()
     {
-        PushLayer(new ExampleLayer());
+        //PushLayer(new ExampleLayer());
+        PushLayer(new Sandbox2D());
     }
     ~Sandbox()
     {}
