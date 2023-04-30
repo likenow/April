@@ -11,7 +11,11 @@ namespace April {
     LayerStack::~LayerStack()
     {
         for (Layer* layer : m_Layers)
+        {
+            // Call the layer's OnDetach before deleting it
+            layer->OnDetach();
             delete layer;
+        }
     }
 
     void LayerStack::PushLayer(Layer* layer)

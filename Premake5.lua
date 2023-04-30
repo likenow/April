@@ -81,7 +81,6 @@ project "April"
         
         defines
         {
-            "AL_PLATFORM_WINDOWS",
             "AL_BUILD_DLL",
             "GLFW_INCLUDE_NONE"
         }
@@ -134,11 +133,6 @@ project "Sandbox"
 
     filter "system:windows"
         systemversion "latest"
-        
-        defines
-        {
-            "AL_PLATFORM_WINDOWS"
-        }
 
     filter "configurations:Debug"
         defines "AL_DEBUG"
