@@ -123,6 +123,9 @@
     <ClInclude Include="src\April\Renderer\Renderer.h">
       <Filter>src\April\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\April\Renderer\Renderer2D.h">
+      <Filter>src\April\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\April\Renderer\RendererAPI.h">
       <Filter>src\April\Renderer</Filter>
     </ClInclude>
@@ -1446,6 +1449,9 @@
       <Filter>src\April\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\April\Renderer\Renderer.cpp">
+      <Filter>src\April\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\April\Renderer\Renderer2D.cpp">
       <Filter>src\April\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\April\Renderer\RendererAPI.cpp">
