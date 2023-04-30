@@ -14,6 +14,7 @@
 #include <unordered_set>
 
 #include "April/Core/Log.h"
+#include "April/Tracing/Instrumentor.h"
 
 #ifdef AL_PLATFORM_WINDOWS
     #include <Windows.h>

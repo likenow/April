@@ -12,6 +12,7 @@ namespace April {
 
     Application::Application ()
     {
+        AL_PROFILE_FUNCTION();
         AL_CORE_ASSERT(!s_Instance, "Application already exists!");
         s_Instance = this;
 
@@ -25,11 +26,13 @@ namespace April {
     bool Application::OnWindowClose(WindowCloseEvent& e)
     {
         m_Running = false;
-        return m_Running;
+        return true;
     }
 
     bool Application::OnWindowResize(WindowResizeEvent& e)
     {
+        AL_PROFILE_FUNCTION();
+
         if (e.GetWidth() == 0 || e.GetHeight() == 0)
         {
             m_Minimized = true;
@@ -44,6 +47,8 @@ namespace April {
 
     void Application::OnEvent(Event& e)
     {
+        AL_PROFILE_FUNCTION();
+
         EventDispatcher dispatcher(e);
 
         dispatcher.Dispatch<WindowCloseEvent>(AL_BIND_EVENT_FN(Application::OnWindowClose));
@@ -59,37 +64,45 @@ namespace April {
 
     void Application::Run()
     {
-        WindowResizeEvent e(1280, 720);
+        AL_PROFILE_FUNCTION();
         while (m_Running)
         {
+            AL_PROFILE_SCOPE("RunLoop");
             float time = (float)glfwGetTime(); // TODO Platform::GetTime
             Timestep ts = time - m_LastFrameTime;
             m_LastFrameTime = time;
 
             if (!m_Minimized)
             {
+                AL_PROFILE_SCOPE("LayerStack OnUpdate");
                 for each (Layer* layer in m_LayerStack)
                 {
                     layer->OnUpdate(ts);
                 }
             }
             m_ImGuiLayer->Begin();
-            for (Layer* layer : m_LayerStack)
-                layer->OnImGuiRender();
+            {
+                AL_PROFILE_SCOPE("LayerStack OnImGuiRender");
+                for (Layer* layer : m_LayerStack)
+                    layer->OnImGuiRender();
+            }
             m_ImGuiLayer->End(); 
 
             m_Window->OnUpdate();
         }
-        while (true);
     }
 
     void Application::PushLayer(Layer* layer)
     {
+        AL_PROFILE_FUNCTION();
         m_LayerStack.PushLayer(layer);
+        layer->OnAttach();
     }
 
     void Application::PushOverlay(Layer* layer)
     {
+        AL_PROFILE_FUNCTION();
         m_LayerStack.PushOverlay(layer);
+        layer->OnAttach();
     }
 }

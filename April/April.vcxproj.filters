@@ -19,6 +19,9 @@
     <Filter Include="src\April\Renderer">
       <UniqueIdentifier>{BA4E93D9-A632-542F-0F93-4E82FB953EB1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\April\Tracing">
+      <UniqueIdentifier>{8B741A59-F78A-18EF-4002-A410AC57E976}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
     </Filter>
@@ -137,6 +140,9 @@
     </ClInclude>
     <ClInclude Include="src\April\Renderer\VertexArray.h">
       <Filter>src\April\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\April\Tracing\Instrumentor.h">
+      <Filter>src\April\Tracing</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
