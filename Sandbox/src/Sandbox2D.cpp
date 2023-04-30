@@ -13,6 +13,7 @@ Sandbox2D::Sandbox2D()
 
 void Sandbox2D::OnAttach()
 {
+    m_Texture = April::Texture2D::Create("assets/textures/Checkerboard.png");
 }
 
 void Sandbox2D::OnDetach()
@@ -31,6 +32,10 @@ void Sandbox2D::OnUpdate(April::Timestep ts)
     April::Renderer2D::BeginScene(m_CameraController.GetCamera());
 
     April::Renderer2D::DrawQuad({ 0.0f, 0.0f }, { 1.0f, 1.0f }, { 0.8f, 0.2f, 0.3f, 1.0f });
+
+    April::Renderer2D::DrawQuad({ 0.5f, 0.5f }, { 1.0f, 1.0f }, { 0.2f, 0.2f, 0.3f, 1.0f });
+
+    April::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 5.0f, 5.0f }, m_Texture);
 
     April::Renderer2D::EndScene();
 }
