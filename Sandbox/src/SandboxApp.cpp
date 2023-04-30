@@ -10,7 +10,7 @@ class ExampleLayer : public April::Layer
 {
 public:
     ExampleLayer()
-        : Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f,0.0f, 0.0f)
+        : Layer("Example"), m_CameraController(1280.0f / 720.0f, true)
     {
         m_VertexArray.reset(April::VertexArray::Create());
 
@@ -128,40 +128,13 @@ public:
 
     void OnUpdate(April::Timestep ts) override
     {
-        //AL_TRACE("Delta time: {0}s {1}ms", ts.GetSeconds(), ts.GetMilliseconds());
-        if (April::Input::IsKeyPressed(AL_KEY_LEFT))
-        {
-            m_CameraPosition.x += m_CameraMoveSpeed * ts;
-        }
-        if (April::Input::IsKeyPressed(AL_KEY_RIGHT))
-        {
-            m_CameraPosition.x -= m_CameraMoveSpeed * ts;
-        }
-        if (April::Input::IsKeyPressed(AL_KEY_DOWN))
-        {
-            m_CameraPosition.y += m_CameraMoveSpeed * ts;
-        }
-        if (April::Input::IsKeyPressed(AL_KEY_UP))
-        {
-            m_CameraPosition.y -= m_CameraMoveSpeed * ts;
-        }
+        // Update
+        m_CameraController.OnUpdate(ts);
 
-        if (April::Input::IsKeyPressed(AL_KEY_A))
-        {
-            m_CameraRotation += m_CameraRotationSpeed * ts;
-        }
-        if (April::Input::IsKeyPressed(AL_KEY_D))
-        {
-            m_CameraRotation -= m_CameraRotationSpeed * ts;
-        }
-        
         April::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
         April::RenderCommand::Clear();
-        m_Camera.SetPosition(m_CameraPosition);
-        // + --> right / - --> left
-        m_Camera.SetRotation(m_CameraRotation);
 
-        April::Renderer::BeginScene(m_Camera);
+        April::Renderer::BeginScene(m_CameraController.GetCamera());
 
         glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -196,6 +169,12 @@ public:
         ImGui::ColorEdit3("Square Color", glm::value_ptr(m_SquareColor));
         ImGui::End();
     }
+
+    void OnEvent(April::Event& event) override
+    {
+        m_CameraController.OnEvent(event);
+    }
+    
     /*
     void OnEvent(April::Event& event) override
     {
@@ -233,13 +212,7 @@ private:
     std::shared_ptr<April::VertexArray> m_SquareVA;
     April::Ref<April::Texture2D> m_Texture, m_ChernoLogoTexture;
 
-    April::OrthographicCamera m_Camera;
-    glm::vec3 m_CameraPosition;
-    
-    float m_CameraMoveSpeed = 1.0f;
-
-    float m_CameraRotation = 0.0f;
-    float m_CameraRotationSpeed = 10.0f;
+    April::OrthographicCameraController m_CameraController;
 
     glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };

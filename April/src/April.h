@@ -23,5 +23,7 @@
 #include "April/KeyCodes.h"
 #include "April/MouseButtonCodes.h"
 
+#include "April/OrthographicCameraController.h"
+
 // Entry point
 #include "April/EntryPoint.h"

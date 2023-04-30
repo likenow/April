@@ -163,6 +163,7 @@
     <ClInclude Include="src\April\LayerStack.h" />
     <ClInclude Include="src\April\Log.h" />
     <ClInclude Include="src\April\MouseButtonCodes.h" />
+    <ClInclude Include="src\April\OrthographicCameraController.h" />
     <ClInclude Include="src\April\Renderer\Buffer.h" />
     <ClInclude Include="src\April\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\April\Renderer\OrthographicCamera.h" />
@@ -607,6 +608,7 @@
     <ClCompile Include="src\April\Layer.cpp" />
     <ClCompile Include="src\April\LayerStack.cpp" />
     <ClCompile Include="src\April\Log.cpp" />
+    <ClCompile Include="src\April\OrthographicCameraController.cpp" />
     <ClCompile Include="src\April\Renderer\Buffer.cpp" />
     <ClCompile Include="src\April\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\April\Renderer\RenderCommand.cpp" />
