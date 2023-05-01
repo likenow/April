@@ -19,9 +19,9 @@ namespace April {
 
     struct Renderer2DData
     {
-        const uint32_t MaxQuads = 10000;
-        const uint32_t MaxVertices = MaxQuads * 4;
-        const uint32_t MaxIndices = MaxQuads * 6;
+        static const uint32_t MaxQuads = 10000;
+        static const uint32_t MaxVertices = MaxQuads * 4;
+        static const uint32_t MaxIndices = MaxQuads * 6;
         static const uint32_t MaxTextureSlots = 32;
 
         Ref<VertexArray> QuadVertexArray;
@@ -36,6 +36,8 @@ namespace April {
         std::array<Ref<Texture2D>, MaxTextureSlots> TextureSlots;
         uint32_t TextureSlotIndex = 1; // 0 => white texture
         glm::vec4 QuadVertexPositions[4];
+
+        Renderer2D::Statistics Stats;
     };
 
     static Renderer2DData s_Data;
@@ -108,6 +110,7 @@ namespace April {
     void Renderer2D::BeginScene(const OrthographicCamera& camera)
     {
         AL_PROFILE_FUNCTION();
+
         s_Data.TextureShader->Bind();
         s_Data.TextureShader->SetMat4("u_ViewProjection", camera.GetViewProjectionMatrix());
 
@@ -133,6 +136,18 @@ namespace April {
         for (uint32_t i = 0; i < s_Data.TextureSlotIndex; i++)
             s_Data.TextureSlots[i]->Bind(i);
         RenderCommand::DrawIndexed(s_Data.QuadVertexArray, s_Data.QuadIndexCount);
+
+        s_Data.Stats.DrawCalls++;
+    }
+
+    void Renderer2D::FlushAndReset()
+    {
+        EndScene();
+
+        s_Data.QuadIndexCount = 0;
+        s_Data.QuadVertexBufferPtr = s_Data.QuadVertexBufferBase;
+
+        s_Data.TextureSlotIndex = 1;
     }
 
     void Renderer2D::DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color)
@@ -143,6 +158,9 @@ namespace April {
     void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
     {
         AL_PROFILE_FUNCTION();
+
+        if (s_Data.QuadIndexCount >= Renderer2DData::MaxIndices)
+            FlushAndReset();
 
         const float textureIndex = 0.0f; // White Texture
         const float tilingFactor = 1.0f;
@@ -180,6 +198,8 @@ namespace April {
 
         s_Data.QuadIndexCount += 6;
 
+        s_Data.Stats.QuadCount++;
+
 #if OLD_PATH
         s_Data.TextureShader->SetFloat("u_TilingFactor", 1.0f);
         s_Data.WhiteTexture->Bind();
@@ -201,6 +221,9 @@ namespace April {
     void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const Ref<Texture2D>& texture, float tilingFactor, const glm::vec4& tintColor)
     {
         AL_PROFILE_FUNCTION();
+
+        if (s_Data.QuadIndexCount >= Renderer2DData::MaxIndices)
+            FlushAndReset();
 
         constexpr glm::vec4 color = { 1.0f, 1.0f, 1.0f, 1.0f };
 
@@ -254,6 +277,8 @@ namespace April {
 
         s_Data.QuadIndexCount += 6;
 
+        s_Data.Stats.QuadCount++;
+
 #if OLD_PATH
         s_Data.TextureShader->SetFloat4("u_Color", tintColor);
         s_Data.TextureShader->SetFloat("u_TilingFactor", tilingFactor);
@@ -275,6 +300,10 @@ namespace April {
     void Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const glm::vec4& color)
     {
         AL_PROFILE_FUNCTION();
+
+        if (s_Data.QuadIndexCount >= Renderer2DData::MaxIndices)
+            FlushAndReset();
+
         const float textureIndex = 0.0f; // White Texture
         const float tilingFactor = 1.0f;
 
@@ -311,6 +340,9 @@ namespace April {
         s_Data.QuadVertexBufferPtr++;
 
         s_Data.QuadIndexCount += 6;
+
+        s_Data.Stats.QuadCount++;
+
 #if OLD_PATH
         s_Data.TextureShader->SetFloat4("u_Color", color);
         s_Data.TextureShader->SetFloat("u_TilingFactor", 1.0f);
@@ -335,6 +367,9 @@ namespace April {
     {
         AL_PROFILE_FUNCTION();
 
+        if (s_Data.QuadIndexCount >= Renderer2DData::MaxIndices)
+            FlushAndReset();
+
         constexpr glm::vec4 color = { 1.0f, 1.0f, 1.0f, 1.0f };
 
         float textureIndex = 0.0f;
@@ -388,6 +423,8 @@ namespace April {
 
         s_Data.QuadIndexCount += 6;
 
+        s_Data.Stats.QuadCount++;
+
 #if OLD_PATH
         s_Data.TextureShader->SetFloat4("u_Color", tintColor);
         s_Data.TextureShader->SetFloat("u_TilingFactor", tilingFactor);
@@ -401,5 +438,15 @@ namespace April {
         s_Data.QuadVertexArray->Bind();
         RenderCommand::DrawIndexed(s_Data.QuadVertexArray);
 #endif
+    }
+
+    void Renderer2D::ResetStats()
+    {
+        memset(&s_Data.Stats, 0, sizeof(Statistics));
+    }
+
+    Renderer2D::Statistics Renderer2D::GetStats()
+    {
+        return s_Data.Stats;
     }
 }
