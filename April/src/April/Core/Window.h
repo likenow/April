@@ -41,7 +41,7 @@ namespace April {
         virtual void* GetNativeWindow() const = 0;
 
         // platform complete this func
-        static Window* Create(const WindowProps& props = WindowProps());
+        static Scope<Window> Create(const WindowProps& props = WindowProps());
     };
 
 }

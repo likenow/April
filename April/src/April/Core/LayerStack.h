@@ -1,6 +1,6 @@
 #pragma once
 #include "April/Core/Core.h"
-#include "Layer.h"
+#include "April/Core/Layer.h"
 
 /*
 A Wrapper around this kind of layers
@@ -11,7 +11,7 @@ namespace April {
     class APRIL_API LayerStack
     {
     public:
-        LayerStack();
+        LayerStack() = default;
         ~LayerStack();
 
         void PushLayer(Layer* layer);

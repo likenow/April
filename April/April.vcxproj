@@ -611,6 +611,7 @@
     <ClCompile Include="src\April\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\April\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\April\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\April\Renderer\GraphicsContext.cpp" />
     <ClCompile Include="src\April\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\April\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\April\Renderer\RenderCommand.cpp" />

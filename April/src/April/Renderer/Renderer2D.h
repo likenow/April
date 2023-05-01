@@ -1,8 +1,8 @@
 #pragma once
 
-#include "OrthographicCamera.h"
+#include "April/Renderer/OrthographicCamera.h"
 
-#include "Texture.h"
+#include "April/Renderer/Texture.h"
 
 namespace April {
 

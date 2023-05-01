@@ -1,7 +1,7 @@
 #include "alpch.h"
-#include "Buffer.h"
+#include "April/Renderer/Buffer.h"
 
-#include "Renderer.h"
+#include "April/Renderer/Renderer.h"
 
 #include "Platform/OpenGL/OpenGLBuffer.h"
 

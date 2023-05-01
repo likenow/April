@@ -1,12 +1,7 @@
 #include "alpch.h"
-#include "LayerStack.h"
+#include "April/Core/LayerStack.h"
 
 namespace April {
-
-    LayerStack::LayerStack()
-    {
-        
-    }
 
     LayerStack::~LayerStack()
     {

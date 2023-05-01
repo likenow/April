@@ -1,8 +1,8 @@
 #include "alpch.h"
-#include "Application.h"
+#include "April/Core/Application.h"
 #include "April/Core/Layer.h"
 #include "April/Renderer/Renderer.h"
-#include "Input.h"
+#include "April/Core/Input.h"
 
 #include "GLFW/glfw3.h"
 
@@ -21,6 +21,11 @@ namespace April {
         Renderer::Init();
         m_ImGuiLayer = new ImGuiLayer();
         PushOverlay(m_ImGuiLayer);
+    }
+
+    Application::~Application()
+    {
+        Renderer::Shutdown();
     }
 
     bool Application::OnWindowClose(WindowCloseEvent& e)

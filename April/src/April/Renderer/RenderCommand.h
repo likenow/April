@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RendererAPI.h"
+#include "April/Renderer/RendererAPI.h"
 
 namespace April {
     class RenderCommand
@@ -26,7 +26,7 @@ namespace April {
             s_RendererAPI->Clear();
         }
 
-        inline static void DrawIndexed(const std::shared_ptr<VertexArray>& vertexArray)
+        inline static void DrawIndexed(const Ref<VertexArray>& vertexArray)
         {
             s_RendererAPI->DrawIndexed(vertexArray);
         }

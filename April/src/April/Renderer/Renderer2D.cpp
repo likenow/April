@@ -1,10 +1,10 @@
 #include "alpch.h"
-#include "Renderer2D.h"
+#include "April/Renderer/Renderer2D.h"
 
-#include "VertexArray.h"
-#include "Shader.h"
-#include "RenderCommand.h"
-#include "glm/gtc/matrix_transform.hpp"
+#include "April/Renderer/VertexArray.h"
+#include "April/Renderer/Shader.h"
+#include "April/Renderer/RenderCommand.h"
+#include <glm/gtc/matrix_transform.hpp>
 
 namespace April {
 

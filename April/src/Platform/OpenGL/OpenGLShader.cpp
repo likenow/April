@@ -1,8 +1,8 @@
 
 #include "alpch.h"
-#include "OpenGLShader.h"
+#include "Platform/OpenGL/OpenGLShader.h"
 #include <glad/glad.h>
-#include "glm/gtc/type_ptr.hpp"
+#include <glm/gtc/type_ptr.hpp>
 #include <fstream>
 
 namespace April {

@@ -1,6 +1,6 @@
 #include "alpch.h"
-#include "Shader.h"
-#include "Renderer.h"
+#include "April/Renderer/Shader.h"
+#include "April/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLShader.h"
 
 namespace April {
@@ -10,7 +10,7 @@ namespace April {
         switch (Renderer::GetAPI())
         {
         case RendererAPI::API::None:    AL_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-        case RendererAPI::API::OpenGL:  return std::make_shared<OpenGLShader>(filepath);
+        case RendererAPI::API::OpenGL:  return  CreateRef<OpenGLShader>(filepath);
         }
 
         AL_CORE_ASSERT(false, "Unknown RendererAPI!");
@@ -22,7 +22,7 @@ namespace April {
         switch (Renderer::GetAPI())
         {
         case RendererAPI::API::None:    AL_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-        case RendererAPI::API::OpenGL:  return std::make_shared<OpenGLShader>(name, vertexSrc, fragmentSrc);
+        case RendererAPI::API::OpenGL:  return CreateRef<OpenGLShader>(name, vertexSrc, fragmentSrc);
         }
         AL_CORE_ASSERT(false, "Unknown RendererAPI!");
         return nullptr;

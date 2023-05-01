@@ -12,7 +12,7 @@ namespace April {
     {
     public:
         Application();
-        virtual ~Application() = default;
+        virtual ~Application();
 
         void OnEvent(Event& e);
         void Run();

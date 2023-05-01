@@ -1,7 +1,7 @@
 #include "alpch.h"
-#include "Texture.h"
+#include "April/Renderer/Texture.h"
 
-#include "Renderer.h"
+#include "April/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLTexture.h"
 
 namespace April {

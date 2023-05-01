@@ -1,4 +1,5 @@
 #pragma once
+#include "April/Core/Core.h"
 
 #ifdef AL_PLATFORM_WINDOWS
 
