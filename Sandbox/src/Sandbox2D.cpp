@@ -40,6 +40,7 @@ void Sandbox2D::OnUpdate(April::Timestep ts)
         AL_PROFILE_SCOPE("Renderer Draw");
         April::Renderer2D::BeginScene(m_CameraController.GetCamera());
         April::Renderer2D::DrawQuad({ 0.0f, 0.0f }, { 1.0f, 1.0f }, { 0.8f, 0.2f, 0.3f, 1.0f });
+        April::Renderer2D::DrawRotatedQuad({ -0.5f, -0.5f }, { 1.0f, 1.0f }, glm::radians(45.0f), { 0.2f, 0.2f, 0.3f, 1.0f });
         April::Renderer2D::DrawQuad({ 0.5f, 0.5f }, { 1.0f, 1.0f }, { 0.2f, 0.2f, 0.3f, 1.0f });
         April::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 5.0f, 5.0f }, m_Texture);
         April::Renderer2D::EndScene();
