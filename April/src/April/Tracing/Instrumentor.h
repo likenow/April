@@ -137,8 +137,8 @@ __FUNCSIG__
 #define AL_COMBINE_HELPER(X,Y) X##Y
 #define AL_COMBINE(X,Y) AL_COMBINE_HELPER(X,Y)
 
-#define AL_PROFILING 1
-#ifdef AL_PROFILING
+#define AL_PROFILING 0
+#if AL_PROFILING
     #define AL_PROFILE_BEGIN_SESSION(name, filepath) ::April::Instrumentor::Get().BeginSession(name, filepath)
     #define AL_PROFILE_END_SESSION() ::April::Instrumentor::Get().EndSession()
     #define AL_PROFILE_SCOPE(name) ::April::InstrumentationTimer AL_COMBINE(timer,__LINE__)(name)
