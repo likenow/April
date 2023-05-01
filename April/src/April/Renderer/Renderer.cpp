@@ -9,6 +9,7 @@ namespace April {
 
     void Renderer::Init()
     {
+        AL_PROFILE_FUNCTION();
         RenderCommand::Init();
         Renderer2D::Init();
     }

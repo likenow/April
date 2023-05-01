@@ -29,6 +29,7 @@ namespace April {
 
     OpenGLVertexArray::OpenGLVertexArray()
     {
+        AL_PROFILE_FUNCTION();
         //glCreateVertexArrays(1, &m_RendererID);
         glGenVertexArrays(1, &m_RendererID);
         glBindVertexArray(m_RendererID);
@@ -36,21 +37,25 @@ namespace April {
 
     OpenGLVertexArray::~OpenGLVertexArray()
     {
+        AL_PROFILE_FUNCTION();
         glDeleteVertexArrays(1, &m_RendererID);
     }
 
     void OpenGLVertexArray::Bind() const
     {
+        AL_PROFILE_FUNCTION();
         glBindVertexArray(m_RendererID);
     }
 
     void OpenGLVertexArray::Unbind() const
     {
+        AL_PROFILE_FUNCTION();
         glBindVertexArray(0);
     }
 
     void OpenGLVertexArray::AddVertexBuffer(const std::shared_ptr<VertexBuffer>& vertexBuffer)
     {
+        AL_PROFILE_FUNCTION();
         AL_CORE_ASSERT(vertexBuffer->GetLayout().GetElements().size(), "Vertex Buffer has no layout!");
 
         glBindVertexArray(m_RendererID);
@@ -74,6 +79,7 @@ namespace April {
 
     void OpenGLVertexArray::SetIndexBuffer(const std::shared_ptr<IndexBuffer>& indexBuffer)
     {
+        AL_PROFILE_FUNCTION();
         glBindVertexArray(m_RendererID);
         indexBuffer->Bind();
 

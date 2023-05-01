@@ -15,6 +15,7 @@ namespace April {
 
     void OpenGLContext::Init()
     {
+        AL_PROFILE_FUNCTION();
         glfwMakeContextCurrent(m_WindowHandle);
         int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
         AL_CORE_ASSERT(status, "Failed to initialize Glad");
@@ -29,6 +30,7 @@ namespace April {
 
     void OpenGLContext::SwapBuffers()
     {
+        AL_PROFILE_FUNCTION();
         glfwSwapBuffers(m_WindowHandle);
     }
 }
