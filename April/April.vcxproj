@@ -157,6 +157,7 @@
     <ClInclude Include="src\April\Core\LayerStack.h" />
     <ClInclude Include="src\April\Core\Log.h" />
     <ClInclude Include="src\April\Core\MouseButtonCodes.h" />
+    <ClInclude Include="src\April\Core\MouseCodes.h" />
     <ClInclude Include="src\April\Core\TimeStep.h" />
     <ClInclude Include="src\April\Core\Window.h" />
     <ClInclude Include="src\April\Events\ApplicationEvent.h" />
@@ -184,7 +185,6 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\alpch.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />

@@ -17,7 +17,7 @@ int main(int argc, char** argv)
     app->Run();
     AL_PROFILE_END_SESSION();
 
-    AL_PROFILE_BEGIN_SESSION("Startup", "AprilProfile-Shutdown.json");
+    AL_PROFILE_BEGIN_SESSION("Shutdown", "AprilProfile-Shutdown.json");
     delete app;
     AL_PROFILE_END_SESSION();
 }
