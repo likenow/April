@@ -9,6 +9,9 @@
 #include "April/Core/Layer.h"
 #include "April/ImGui/ImGuiLayer.h"
 
+#include "April/Scene/Scene.h"
+#include "April/Scene/Components.h"
+
 #include "April/Core/TimeStep.h"
 
 // Renderer

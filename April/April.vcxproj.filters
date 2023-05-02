@@ -19,6 +19,9 @@
     <Filter Include="src\April\Renderer">
       <UniqueIdentifier>{BA4E93D9-A632-542F-0F93-4E82FB953EB1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\April\Scene">
+      <UniqueIdentifier>{B1302258-1DBC-8F1C-26CD-121192D7EB1C}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\April\Tracing">
       <UniqueIdentifier>{8B741A59-F78A-18EF-4002-A410AC57E976}</UniqueIdentifier>
     </Filter>
@@ -87,6 +90,9 @@
     <ClInclude Include="src\April\Core\MouseButtonCodes.h">
       <Filter>src\April\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\April\Core\MouseCodes.h">
+      <Filter>src\April\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\April\Core\TimeStep.h">
       <Filter>src\April\Core</Filter>
     </ClInclude>
@@ -143,6 +149,12 @@
     </ClInclude>
     <ClInclude Include="src\April\Renderer\VertexArray.h">
       <Filter>src\April\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\April\Scene\Components.h">
+      <Filter>src\April\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\April\Scene\Scene.h">
+      <Filter>src\April\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\April\Tracing\Instrumentor.h">
       <Filter>src\April\Tracing</Filter>
@@ -1425,7 +1437,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\April\Core\MouseCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\April\Core\Application.cpp">
@@ -1481,6 +1492,9 @@
     </ClCompile>
     <ClCompile Include="src\April\Renderer\VertexArray.cpp">
       <Filter>src\April\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\April\Scene\Scene.cpp">
+      <Filter>src\April\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
       <Filter>src\Platform\OpenGL</Filter>

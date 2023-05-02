@@ -21,6 +21,7 @@ IncludeDir["Glad"] = "April/vendor/Glad/include"
 IncludeDir["ImGui"] = "April/vendor/imgui"
 IncludeDir["glm"] = "April/vendor/glm"
 IncludeDir["stb_image"] = "April/vendor/stb_image"
+IncludeDir["entt"] = "April/vendor/entt/include"
 
 group "Dependencies"
     include "April/vendor/GLFW"
@@ -65,7 +66,8 @@ project "April"
         "%{IncludeDir.Glad}",
         "%{IncludeDir.ImGui}",
         "%{IncludeDir.glm}",
-        "%{IncludeDir.stb_image}"
+        "%{IncludeDir.stb_image}",
+        "%{IncludeDir.entt}"
     }
 
     links 
@@ -122,7 +124,8 @@ project "Sandbox"
         "April/vendor/spdlog/include",
         "April/src",
         "April/vendor",
-        "%{IncludeDir.glm}"
+        "%{IncludeDir.glm}",
+        "%{IncludeDir.entt}"
     }
 
     links
@@ -170,7 +173,8 @@ project "Aprilnut"
         "April/vendor/spdlog/include",
         "April/src",
         "April/vendor",
-        "%{IncludeDir.glm}"
+        "%{IncludeDir.glm}",
+        "%{IncludeDir.entt}"
     }
 
     links
