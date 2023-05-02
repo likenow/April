@@ -1,6 +1,6 @@
 workspace "April"
     architecture "x64"
-    startproject "Sandbox"
+    startproject "Aprilnut"
 
     configurations
     {
@@ -97,10 +97,9 @@ project "April"
         optimize "on"
 
     filter "configurations:Dist"
-        defines "AL_Dist"
+        defines "AL_DIST"
         runtime "Release"
         optimize "on"
-
 
 project "Sandbox"
     location "Sandbox"
@@ -145,6 +144,54 @@ project "Sandbox"
         optimize "on"
 
     filter "configurations:Dist"
-        defines "AL_Dist"
+        defines "AL_DIST"
+        runtime "Release"
+        optimize "on"
+
+
+project "Aprilnut"
+    location "Aprilnut"
+    kind "ConsoleApp"
+    language "C++"
+    cppdialect "C++17"
+    staticruntime "on"
+
+    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+    files
+    {
+        "%{prj.name}/src/**.h",
+        "%{prj.name}/src/**.cpp"
+    }
+
+    includedirs
+    {
+        "April/vendor/spdlog/include",
+        "April/src",
+        "April/vendor",
+        "%{IncludeDir.glm}"
+    }
+
+    links
+    {
+        "April"
+    }
+
+    filter "system:windows"
+        systemversion "latest"
+
+    filter "configurations:Debug"
+        defines "AL_DEBUG"
+        runtime "Debug"
+        symbols "on"
+
+    filter "configurations:Release"
+        defines "AL_RELEASE"
+        runtime "Release"
+        optimize "on"
+
+    filter "configurations:Dist"
+        defines "AL_DIST"
         runtime "Release"
         optimize "on"

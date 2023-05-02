@@ -11,7 +11,7 @@ namespace April {
     class APRIL_API Application
     {
     public:
-        Application();
+        Application(const std::string& name = "April App");
         virtual ~Application();
 
         void OnEvent(Event& e);

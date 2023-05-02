@@ -21,7 +21,6 @@ private:
     // Temp
     April::Ref<April::VertexArray> m_SquareVA;
     April::Ref<April::Shader> m_FlatColorShader;
-    April::Ref<April::Framebuffer> m_Framebuffer;
 
     April::Ref<April::Texture2D> m_Texture;
 

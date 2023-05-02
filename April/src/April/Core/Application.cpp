@@ -10,13 +10,12 @@ namespace April {
 
     Application* Application::s_Instance = nullptr;
 
-    Application::Application ()
+    Application::Application (const std::string& name)
     {
         AL_PROFILE_FUNCTION();
         AL_CORE_ASSERT(!s_Instance, "Application already exists!");
         s_Instance = this;
-
-        m_Window = std::unique_ptr<Window>(Window::Create());
+        m_Window = Window::Create(WindowProps(name));
         m_Window->SetEventCallback(AL_BIND_EVENT_FN(Application::OnEvent));
         Renderer::Init();
         m_ImGuiLayer = new ImGuiLayer();
