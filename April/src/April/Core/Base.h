@@ -60,12 +60,22 @@
 #endif // End of DLL support
 
 #ifdef AL_DEBUG
+    #if defined(AL_PLATFORM_WINDOWS)
+        #define AL_DEBUGBREAK() __debugbreak()
+    #elif defined(AL_PLATFORM_LINUX)
+        #include <signal.h>
+        #define AL_DEBUGBREAK() raise(SIGTRAP)
+    #else
+        #error "Platform doesn't support debugbreak yet!"
+    #endif
     #define AL_ENABLE_ASSERTS
+#else
+    #define AL_DEBUGBREAK()
 #endif
 
 #ifdef AL_ENABLE_ASSERTS
-    #define AL_ASSERT(x, ...) { if(!(x)) { AL_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-    #define AL_CORE_ASSERT(x, ...) { if(!(x)) { AL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+    #define AL_ASSERT(x, ...) { if(!(x)) { AL_ERROR("Assertion Failed: {0}", __VA_ARGS__); AL_DEBUGBREAK(); } }
+    #define AL_CORE_ASSERT(x, ...) { if(!(x)) { AL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); AL_DEBUGBREAK(); } }
 #else
     #define AL_ASSERT(x, ...)
     #define AL_CORE_ASSERT(x, ...)

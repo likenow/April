@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-#include "April/Core/Core.h"
+#include "April/Core/Base.h"
 
 namespace April {
 

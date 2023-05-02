@@ -2,7 +2,7 @@
 
 // For use by April Applications
 
-#include "April/Core/Core.h"
+#include "April/Core/Base.h"
 #include "April/Core/Application.h"
 #include "April/Core/Log.h"
 

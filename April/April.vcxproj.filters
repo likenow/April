@@ -63,7 +63,7 @@
     <ClInclude Include="src\April\Core\Application.h">
       <Filter>src\April\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\April\Core\Core.h">
+    <ClInclude Include="src\April\Core\Base.h">
       <Filter>src\April\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\April\Core\EntryPoint.h">

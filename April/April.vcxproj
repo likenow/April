@@ -149,7 +149,7 @@
   <ItemGroup>
     <ClInclude Include="src\April.h" />
     <ClInclude Include="src\April\Core\Application.h" />
-    <ClInclude Include="src\April\Core\Core.h" />
+    <ClInclude Include="src\April\Core\Base.h" />
     <ClInclude Include="src\April\Core\EntryPoint.h" />
     <ClInclude Include="src\April\Core\Input.h" />
     <ClInclude Include="src\April\Core\KeyCodes.h" />
