@@ -111,6 +111,9 @@
     <ClInclude Include="src\April\Renderer\Buffer.h">
       <Filter>src\April\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\April\Renderer\Framebuffer.h">
+      <Filter>src\April\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\April\Renderer\GraphicsContext.h">
       <Filter>src\April\Renderer</Filter>
     </ClInclude>
@@ -148,6 +151,9 @@
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLFramebuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
@@ -1445,6 +1451,12 @@
     <ClCompile Include="src\April\Renderer\Buffer.cpp">
       <Filter>src\April\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\April\Renderer\Framebuffer.cpp">
+      <Filter>src\April\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\April\Renderer\GraphicsContext.cpp">
+      <Filter>src\April\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\April\Renderer\OrthographicCamera.cpp">
       <Filter>src\April\Renderer</Filter>
     </ClCompile>
@@ -1476,6 +1488,9 @@
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLFramebuffer.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">

@@ -165,6 +165,7 @@
     <ClInclude Include="src\April\Events\MouseEvent.h" />
     <ClInclude Include="src\April\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\April\Renderer\Buffer.h" />
+    <ClInclude Include="src\April\Renderer\Framebuffer.h" />
     <ClInclude Include="src\April\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\April\Renderer\OrthographicCamera.h" />
     <ClInclude Include="src\April\Renderer\OrthographicCameraController.h" />
@@ -178,6 +179,7 @@
     <ClInclude Include="src\April\Tracing\Instrumentor.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLFramebuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h" />
@@ -611,6 +613,7 @@
     <ClCompile Include="src\April\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\April\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\April\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\April\Renderer\Framebuffer.cpp" />
     <ClCompile Include="src\April\Renderer\GraphicsContext.cpp" />
     <ClCompile Include="src\April\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\April\Renderer\OrthographicCameraController.cpp" />
@@ -623,6 +626,7 @@
     <ClCompile Include="src\April\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLFramebuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp" />

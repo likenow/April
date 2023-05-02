@@ -50,6 +50,11 @@ namespace April {
         return false;
     }
 
+    void Application::Close()
+    {
+        m_Running = false;
+    }
+
     void Application::OnEvent(Event& e)
     {
         AL_PROFILE_FUNCTION();

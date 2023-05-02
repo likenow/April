@@ -15,6 +15,7 @@
 #include "April/Renderer/Renderer.h"
 #include "April/Renderer/RenderCommand.h"
 #include "April/Renderer/Buffer.h"
+#include "April/Renderer/Framebuffer.h"
 #include "April/Renderer/Shader.h"
 #include "April/Renderer/VertexArray.h"
 #include "April/Renderer/OrthographicCamera.h"
