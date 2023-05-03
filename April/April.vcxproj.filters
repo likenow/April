@@ -1440,6 +1440,7 @@
     <ClInclude Include="src\April\Scene\Entity.h" />
     <ClInclude Include="src\April\Renderer\Camera.h" />
     <ClInclude Include="src\April\Scene\SceneCamera.h" />
+    <ClInclude Include="src\April\Scene\ScriptableEntity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\April\Core\Application.cpp">
