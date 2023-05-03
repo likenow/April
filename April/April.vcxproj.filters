@@ -1438,6 +1438,8 @@
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
     <ClInclude Include="src\April\Scene\Entity.h" />
+    <ClInclude Include="src\April\Renderer\Camera.h" />
+    <ClInclude Include="src\April\Scene\SceneCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\April\Core\Application.cpp">
@@ -1531,5 +1533,6 @@
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
     <ClCompile Include="src\April\Scene\Entity.cpp" />
+    <ClCompile Include="src\April\Scene\SceneCamera.cpp" />
   </ItemGroup>
 </Project>
