@@ -11,6 +11,7 @@
 
 #include "April/Scene/Scene.h"
 #include "April/Scene/Components.h"
+#include "April/Scene/Entity.h"
 
 #include "April/Core/TimeStep.h"
 

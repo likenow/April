@@ -178,6 +178,7 @@
     <ClInclude Include="src\April\Renderer\Texture.h" />
     <ClInclude Include="src\April\Renderer\VertexArray.h" />
     <ClInclude Include="src\April\Scene\Components.h" />
+    <ClInclude Include="src\April\Scene\Entity.h" />
     <ClInclude Include="src\April\Scene\Scene.h" />
     <ClInclude Include="src\April\Tracing\Instrumentor.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
@@ -626,6 +627,7 @@
     <ClCompile Include="src\April\Renderer\Shader.cpp" />
     <ClCompile Include="src\April\Renderer\Texture.cpp" />
     <ClCompile Include="src\April\Renderer\VertexArray.cpp" />
+    <ClCompile Include="src\April\Scene\Entity.cpp" />
     <ClCompile Include="src\April\Scene\Scene.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
