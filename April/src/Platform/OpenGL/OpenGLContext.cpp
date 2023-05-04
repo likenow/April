@@ -4,7 +4,6 @@
 
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
-#include <GL/GL.h>
 
 namespace April {
     OpenGLContext::OpenGLContext(GLFWwindow* windowHandle)
@@ -20,12 +19,10 @@ namespace April {
         int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
         AL_CORE_ASSERT(status, "Failed to initialize Glad");
 
-        /*
         AL_CORE_INFO("OpenGL Info:");
-        AL_CORE_INFO(" Vendor: {0}", glGetString(GL_VENDOR));
-        AL_CORE_INFO(" Renderer {0}", glGetString(GL_RENDERER));
-        AL_CORE_INFO(" Version: {0}", glGetString(GL_VERSION));
-        */
+        AL_CORE_INFO(" Vendor: {0}", (const char*)glGetString(GL_VENDOR));
+        AL_CORE_INFO(" Renderer {0}", (const char*)glGetString(GL_RENDERER));
+        AL_CORE_INFO(" Version: {0}", (const char*)glGetString(GL_VERSION));
     }
 
     void OpenGLContext::SwapBuffers()
